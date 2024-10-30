@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:image" content="/img/metalogo.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플래닛투어</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- 구글폰트 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body class="bd">
+    <div class="whole">
+        <div class="hd">
+            <header class="logo">
+                <img src="/img/image04.png" alt="">
+            </header>
+            <h1>
+                안녕하세요 저희 플래닛투어를 찾아주셔서 감사합니다.<br>
+                상담 진행에 앞서 두 분의 맞춤 상담을 위해 아래 설문지에 체크 부탁드립니다.<br>
+                <strong>(중복 선택 가능)</strong>
+            </h1>
+        </div>
+        <form class="myform" action="/add" method="POST" id="myForm">
+            <div class="name">
+                <label for="groomname">신랑님 성함 <input type="text" id="groomname" name="groomname" value=""></label>
+                <label for="bridename">신부님 성함 <input type="text" id="bridename" name="bridename" value=""></label>
+            </div>
+            <div class="form-whole write-form-whole">
+                <div class="experience-all">
+                    <h2>나의 해외여행 경험은?</h2>
+                    <div class="travel-experience">
+                        <div class="groom">
+                            <p>신랑님</p>
+                            <div>
+                                <div>
+                                    <input id="groom-yes" name="groomtravel" value="있다" type="radio"><label class="groom-yes" for="groom-yes">있다</label>
+                                    <input id="groom-no" name="groomtravel" value="없다" type="radio"><label class="groom-no" for="groom-no">없다</label>
+                                </div>
+                                <label id="groom-number-label" class="groom-number" for="groom-number">여행 횟수: 
+                                    <div class="groom-number-div">
+                                        <div onclick="count('minus', 'result')">-</div>
+                                        <input id="result" type="number" value="0" maxlength='2' min="0" max="20" name="groomnumber" disabled>
+                                        <div onclick="count('plus', 'result')">+</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="bride">
+                            <p>신부님</p>
+                            <div>
+                                <div>
+                                    <input id="bride-yes" name="bridetravel" value="있다" type="radio"><label class="bride-yes" for="bride-yes">있다</label>
+                                    <input id="bride-no" name="bridetravel" value="없다" type="radio"><label class="bride-no" for="bride-no">없다</label>
+                                </div>
+                                <label id="bride-number-label" class="bride-number" for="bride-number">여행 횟수: 
+                                    <div class="bride-number-div">
+                                        <div onclick="count2('minus2', 'result2')">-</div>
+                                        <input id="result2" type="number" value="0" maxlength='2' min="0" max="20" name="bridenumber" disabled>
+                                        <div onclick="count2('plus2', 'result2')">+</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="travel-type-section" class="travel-type">
+                        <h2>1 - 1 해외여행 경험이 있다면 여행 타입은? (1번 질문에 "있다" 체크하신 고객님)</h2>
+                        <div id="groom-travel-type" class="groom-type travel-type-section">
+                            <p>신랑님</p>
+                            <div class="groom-column">
+                                <label class="groomtype1" for="groomtype1"><input name="groomtype" id="groomtype1" type="checkbox" value="자유여행"> 자유여행</label>
+                                <label class="groomtype2" for="groomtype2"><input name="groomtype" id="groomtype2" type="checkbox" value="패키지"> 패키지</label>
+                                <label class="groomtype3" for="groomtype3"><input name="groomtype" id="groomtype3" type="checkbox" value="호텔/항공"> 호텔/항공 각각 셀프 예약 가능</label>
+                            </div>
+                        </div>
+                        <div id="bride-travel-type" class="bride-type travel-type-section">
+                            <p>신부님</p>
+                            <div class="bride-column">
+                                <label class="bridetype1" for="bridetype1"><input name="bridetype" id="bridetype1" type="checkbox" value="자유여행"> 자유여행</label>
+                                <label class="bridetype2" for="bridetype2"><input name="bridetype" id="bridetype2" type="checkbox" value="패키지"> 패키지</label>
+                                <label class="bridetype3" for="bridetype3"><input name="bridetype" id="bridetype3" type="checkbox" value="호텔/항공"> 호텔/항공 각각 셀프 예약 가능</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="next-concept">
+                        <div class="experience-btn"><p>다음</p></div>
+                    </div>
+                </div>
+                <div class="travel-concept">
+                    <h2>선호하는 여행 콘셉트는?</h2>
+                    <label class="concept1" for="concept1"><input id="concept1" type="checkbox" name="concept1" value="좋은 리조트&풀빌라에서 맛있는 식도락& 주류 무제한 제공받으며 즐기고 싶은 호캉스형"><p>좋은 리조트&풀빌라에서 맛있는 식도락 & 주류 무제한 제공받으며 즐기고 싶은 호캉스형 </p></label>
+                    <label class="concept2" for="concept2"><input id="concept2" type="checkbox" name="concept2" value="한쌍 단독으로 이곳저곳 탐방하면서 다양한 숙소체험 및 활동성 있는 탐방형"><p>한쌍 단독으로 이곳저곳 탐방하면서 다양한 숙소체험 및 활동성 있는 탐방형 </p></label>
+                    <label class="concept3" for="concept3"><input id="concept3" type="checkbox" name="concept3" value="나는야 귀찮은 건 싫다! 하루종일 바다만 봐도 좋은 은둔형"><p>나는야 귀찮은 건 싫다! 하루종일 바다만 봐도 좋은 은둔형 </p></label>
+                    <label class="concept4" for="concept4"><input id="concept4" type="checkbox" name="concept4" value="남는 건 사진뿐이야! 기차 타고~ 버스 타고~ 유적지 박물관등 돌아다니는 방랑형"><p>남는 건 사진뿐이야! 기차 타고~ 버스 타고~ 유적지 박물관등 돌아다니는 방랑형 </p></label>
+                    <label class="concept5" for="concept5"><input id="concept5" type="checkbox" name="concept5" value="나 좀 챙겨줘!! 이것저것 신경 쓰지 않고 다 알아서 서비스해주는 황제형"><p>나 좀 챙겨줘!! 이것저것 신경 쓰지 않고 다 알아서 서비스해주는 황제형 </p></label>
+                    <label class="concept6" for="concept6"><input id="concept6" type="checkbox" name="concept6" value="각종 액티비티 체험 너무 좋아! 한국에서 할 수 없는 것 다해보고 싶어 즐길거리 체험형"><p>각종 액티비티 체험 너무 좋아! 한국에서 할 수 없는 것 다해보고 싶어 즐길거리 체험형 </p></label>
+                    <label class="concept7" for="concept7"><input id="concept7" type="checkbox" name="concept7" value="쇼핑센터, 야시장, 기념품가게, 명품샵등 여행에 쇼핑은 필수야! 쇼핑형"><p>쇼핑센터, 야시장, 기념품가게, 명품샵등 여행에 쇼핑은 필수야! 쇼핑형</p></label>
+                    <div class="prev-experience">
+                        <div class="prev-experience-btn">이전</div>
+                    </div>
+                    <div class="next-country">
+                        <div class="country-btn">다음</div>
+                    </div>
+                </div>
+                <div class="want-country">
+                    <h2>내가 원하는 비행거리와 지역은?</h2>
+                    <label class="country1" for="country1"><input id="country1" type="checkbox" name="country1" value="단거리 4-5시간 내외 - 베트남, 필리핀, 괌, 사이판"><p>단거리 4-5시간 내외 - 베트남, 필리핀, 괌, 사이판</p></label>
+                    <label class="country2" for="country2"><input id="country2" type="checkbox" name="country2" value="단거리 5-7시간 내외 - 태국, 발리"><p>단거리 5-7시간 내외 - 태국, 발리</p></label>
+                    <label class="country3" for="country3"><input id="country3" type="checkbox" name="country3" value="중거리 8-11시간 내외 - 하와이"><p>중거리 8-11시간 내외 - 하와이</p></label>
+                    <label class="country4" for="country4"><input id="country4" type="checkbox" name="country4" value="장거리 10-13시간 내외 - 호주/유럽"><p>장거리 10-13시간 내외 - 호주/유럽</p></label>
+                    <label class="country5" for="country5"><input id="country5" type="checkbox" name="country5" value="장거리 및 경유 14-24시간 내외 - 몰디브/모리셔스/칸쿤 등"><p>장거리 및 경유 14-24시간 내외 - 몰디브/모리셔스/칸쿤 등</p></label>
+                    <label class="country6" for="country6"><input id="country6" type="checkbox" name="country6" value="중/장거리 경유무관 - (싱가폴경유) 태국, 발리, 몰디브/(두바이경유) 몰디브/모리셔스/(미주도시경유) 칸쿤/(유럽도시 및 중동경유) 유럽 등"><p>중/장거리 경유무관 - (싱가폴경유) 태국, 발리, 몰디브/(두바이경유) 몰디브/모리셔스/(미주도시경유) 칸쿤/(유럽도시 및 중동경유) 유럽 등</p></label>
+                    <div class="prev-concept">
+                        <div class="prev-concept-btn">이전</div>
+                    </div>
+                    <div class="next-lodging">
+                        <div class="lodging-btn">다음</div>
+                    </div>
+                </div>
+                <div class="lodging-type">
+                    <h2>내가 원하는 숙소 타입은?</h2>
+                    <label class="type1" for="type1"><input id="type1" type="checkbox" name="lodgingtype1" value="상관없다">상관없다</label>
+                    <label class="type2" for="type2"><input id="type2" type="checkbox" name="lodgingtype2" value="호텔">호텔</label>
+                    <label class="type3" for="type3"><input id="type3" type="checkbox" name="lodgingtype3" value="리조트 + 풀빌라">리조트 + 풀빌라</label>
+                    <label class="type4" for="type4"><input id="type4" type="checkbox" name="lodgingtype4" value="수상가옥">수상가옥</label>
+                    <div class="prev-country">
+                        <div class="prev-country-btn">이전</div>
+                    </div>
+                    <div class="next-expenses">
+                        <div class="next-expenses-btn">다음</div>
+                    </div>
+                </div>
+                <div class="travel-expenses">
+                    <h2>내가 원하는 1인 여행경비는?(항공료 제외)</h2>
+                    <label class="expenses1" for="expenses1"><input id="expenses1" type="checkbox" name="expenses1" value="가성비형(~200만 원 미만)">가성비형(~200만 원 미만)</label>
+                    <label class="expenses2" for="expenses2"><input id="expenses2" type="checkbox" name="expenses2" value="절충형(2~300만 원)">절충형(2~300만 원)</label>
+                    <label class="expenses3" for="expenses3"><input id="expenses3" type="checkbox" name="expenses3" value="럭셔리형(3~500만 원 이상)">럭셔리형(3~500만 원 이상)</label>
+                    <label class="expenses4" for="expenses4"><input id="expenses4" type="checkbox" name="expenses4" value="그대와 함께라면 돈이문제냐">그대와 함께라면 돈이문제냐</label>
+                    <label class="expenses5" for="expenses5"><input id="expenses5" type="checkbox" name="expenses5" value="생각해 본 적 없다">생각해 본 적 없다.</label>
+                    <div class="prev-type">
+                        <div class="prev-type-btn">이전</div>
+                    </div>
+                    <div class="next-period">
+                        <div class="next-period-btn">다음</div>
+                    </div>
+                </div>
+                <div class="travel-period">
+                    <h2>내가 원하는 여행기간은?</h2>
+                    <label class="period1" for="period1"><input id="period1" type="checkbox" name="period1" value="5일 이하" >5일 이하</label>
+                    <label class="period2" for="period2"><input id="period2" type="checkbox" name="period2" value="6 ~ 8일" >6 ~ 8일</label>
+                    <label class="period3" for="period3"><input id="period3" type="checkbox" name="period3" value="9일 이상" >9일 이상</label>
+                    <div class="prev-expenses">
+                        <div class="prev-expenses-btn">이전</div>
+                    </div>
+                    <div class="next-request">
+                        <div class="next-request-btn">다음</div>
+                    </div>
+                </div>
+                <div class="additional-request">
+                    <h2>추가로 요청할 사항이 있으시다면 적어주세요.</h2>
+                    <textarea name="request" id=""></textarea>
+                    <div class="prev-request">
+                        <span class="material-symbols-outlined">west</span>
+                    </div>
+                </div>
+                <div class="form-btn write-form-btn">
+                    <button id="submitBtn" type="submit" class="btn-send">완료하기</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+</body>
+</html>

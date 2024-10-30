@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:image" content="/img/metalogo.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플래닛투어 상담예약</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/js/common.js" defer></script>
+
+    <!-- 구글폰트 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check,keyboard_control_key" />
+</head>
+<body>
+    <!-- 고객 작성용 -->
+    <section class="contact-edit-main">
+        <div class="contact-hd">
+            <div>
+                <div><img src="/img/contactlogo.png" alt="로고"><a href=""></a></div>
+                <p>상담 예약</p>
+            </div>
+        </div>
+        <div class="edit-top">
+            <div><img src="/img/clock.png" alt="시계"></div>
+            <h1><strong>상담 가능 시간</strong>을</h1>
+            <h1>알려주세요</h1>
+        </div>
+        <form class="counseling-form" action="/contact-edit" method="POST">
+            <input name="id" value="<%= contactResult._id %>" style="display: none;">
+            <div class="select-box">
+                <input class="select-choice" name="counseling" value="" placeholder="시간 선택" readonly>
+                <span class="material-symbols-outlined">keyboard_control_key</span>
+                <ul class="option-box">
+                    <li class="option" value="9시 ~ 10시"><p>9시 ~ 10시</p></li>
+                    <li class="option" value="10시 ~ 11시"><p>10시 ~ 11시</p></li>
+                    <li class="option" value="13시 ~ 14시"><p>13시 ~ 14시</p></li>
+                    <li class="option" value="14시 ~ 15시"><p>14시 ~ 15시</p></li>
+                    <li class="option" value="15시 ~ 16시"><p>15시 ~ 16시</p></li>
+                    <li class="option" value="16시 ~ 17시"><p>16시 ~ 17시</p></li>
+                    <li class="option" value="17시 ~ 18시"><p>17시 ~ 18시</p></li>
+                </ul>
+                <a class="select-click"></a>
+            </div>
+            <div class="choice-btn">
+                <div class="A-type on">
+                    <div class="checkBox">
+                        <span class="material-symbols-outlined">check</span>
+                    </div>
+                    <p>타사 계약하신 경우</p>
+                    <input type="radio" name="agonize" value="타사 계약하신 경우" checked>
+                </div>
+                <div class="B-type">
+                    <div class="checkBox">
+                        <span class="material-symbols-outlined">check</span>
+                    </div>
+                    <p>견적 비교중이신 경우</p>
+                    <input type="radio" name="agonize" value="견적 비교중이신 경우">
+                </div>
+            </div>
+            <button class="send-btn" type="submit"><p>예약하기</p></button>
+        </form>
+    </section>
+
+    
+</body>
+</html>

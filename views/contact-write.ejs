@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:image" content="/img/metalogo.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플래닛투어</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/js/common.js" defer></script>
+
+    <!-- 구글폰트 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+    <section class="contact-write-main contact-edit-main">
+        <div class="contact-hd">
+            <div>
+                <div><img src="/img/contactlogo.png" alt="로고"><a href=""></a></div>
+                <p>성함 작성</p>
+            </div>
+        </div>
+        <form class="counseling-form" action="/contact-add" method="POST">
+            <div class="client-name-write">
+                <div>
+                    <p>신랑님 성함</p>
+                    <input type="text" name="groomClient" value="">
+                </div>
+                <div>
+                    <p>신부님 성함</p>
+                    <input type="text" name="brideClient" value="">
+                </div>
+            </div>
+            <div class="select-box" style="display: none;">
+                <input class="select-choice" name="counseling" value="" placeholder="시간 선택" readonly>
+            </div>
+            <div class="choice-btn" style="display: none;">
+                <div class="A-type">
+                    <input name="agonize" type="radio" value="타사 계약하신 경우">
+                </div>
+                <div class="B-type">
+                    <input name="agonize" type="radio" value="견적 비교중이신 경우">
+                </div>
+            </div>
+            <button class="send-btn" type="submit"><p>전송</p></button>
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:image" content="/img/metalogo.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플래닛투어</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+    <div class="detail-whole">
+        <div class="detail-hd">
+            <header class="detail-logo">
+                <img src="/img/image04.png" alt="">
+            </header>
+            <h1>
+                안녕하세요 저희 플래닛투어를 찾아주셔서 감사합니다.<br>
+                상담 진행에 앞서 두 분의 맞춤 상담을 위해 아래 설문지에 체크 부탁드립니다.(중복 선택 가능)
+            </h1>
+        </div>
+        <form class="detail-myform">
+            <div class="detail-form-whole">
+                <div class="name">
+                    <label for="groomname">신랑님 성함 <input type="text" id="groomname" name="groomname" value="<%= result.groomname %>" disabled></label>
+                    <label for="bridename">신부님 성함 <input type="text" id="bridename" name="bridename" value="<%= result.bridename %>" disabled></label>
+                </div>
+                <div>
+                    <h2>1. 나의 해외여행 경험은?</h2>
+                    <div class="detail-travel-experience">
+                        <div class="detail-groom">
+                            <p>신랑님</p>
+                            <%= result.groomtravel %>
+                            <label for="groom-number">(대략 횟수: <input id="groom-number" type="number" maxlength='3' name="groomnumber" value="<%= result.groomnumber %>" disabled>&nbsp;번 )</label>
+                        </div>
+                        <div class="detail-bride">
+                            <p>신부님</p>
+                            <%= result.bridetravel %>
+                            <label for="bride-number">(대략 횟수: <input id="bride-number" type="number" maxlength='3' name="bridenumber" value="<%= result.bridenumber %>" disabled>&nbsp;번 )</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-travel-type">
+                    <h2>1 - 1 해외여행 경험이 있다면 여행 타입은? (1번 질문에 "있다" 체크하신 고객님)</h2>
+                    <div class="detail-groom-type">
+                        <p>신랑님</p>
+                        <%= result.groomtype ? result.groomtype : "없음" %>
+                    </div>
+                    <div class="detail-bride-type">
+                        <p>신부님</p>
+                        <%= result.bridetype ? result.bridetype : "없음" %>
+                    </div>
+                </div>
+                <div class="detail-travel-concept">
+                    <h2>2. 선호하는 여행 콘셉트는?</h2>
+                    <% for (let i = 0; i < concepts.length; i++) { %>
+                        <div class="detail-travel-concept-check">
+                            <input type="checkbox" disabled checked>
+                            <p><%= concepts[i] %></p>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="detail-want-country">
+                    <h2>3. 내가 원하는 비행거리와 지역은?</h2>
+                    <% for (let i = 0; i < countries.length; i++) { %>
+                        <div class="detail-want-country-check">
+                            <input type="checkbox" disabled checked>
+                            <p><%= countries[i] %></p>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="detail-lodging-type">
+                    <h2>4. 내가 원하는 숙소 타입은?</h2>
+                    <% for (let i = 0; i < lodgingtypes.length; i++) { %>
+                        <div class="detail-lodging-type-check">
+                            <input type="checkbox" disabled checked>
+                            <p><%= lodgingtypes[i] %></p>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="detail-travel-expenses">
+                    <h2>5. 내가 원하는 1인 여행경비는?(항공료 제외)</h2>
+                    <% for (let i = 0; i < expenses.length; i++) { %>
+                        <div class="detail-travel-expenses-check">
+                            <input type="checkbox" disabled checked>
+                            <p><%= expenses[i] %></p>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="detail-travel-period">
+                    <h2>6. 내가 원하는 여행기간은?</h2>
+                    <% for (let i = 0; i < periods.length; i++) { %>
+                        <div class="detail-travel-period-check">
+                            <input type="checkbox" disabled checked>
+                            <p><%= periods[i] %></p>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="detail-additional-request">
+                    <h2>7. 추가로 요청할 사항이 있으시다면 적어주세요.</h2>
+                    <textarea name="request" id="" disabled><%= result.request %></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+</body>
+</html>
+
+

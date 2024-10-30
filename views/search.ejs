@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:image" content="/img/metalogo.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플래닛투어</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="grey-bg">
+
+
+
+    <h4>검색 결과 페이지</h4>
+    
+    <div class="list-all">
+        <div>
+            <div class="white-bg">
+                <% for (let i = 0; i < 글목록.length; i++){ %>
+                    <div class="list-box">
+                        <div class="list-click">
+                            <p style="<% if (!글목록[i].groomname) { %>display: none;<% } %>"><%= 글목록[i].groomname %>신랑님</p>
+                            <p style="<% if (!글목록[i].bridename) { %>display: none;<% } %>"><%= 글목록[i].bridename %>신부님</p>
+                            <h6>의 상담설문지</h6>
+                            <a href="/detail/<%= 글목록[i]._id %>"></a>
+                        </div>
+                        <div class="delete-agree">
+                            <% if (글목록[i].createdAt) { %>
+                                <div>
+                                    <p>
+                                        <%= new Date(글목록[i].createdAt).toLocaleDateString('ko-KR', {
+                                            year: 'numeric',
+                                            month: '2-digit',
+                                            day: '2-digit'
+                                        }) %>
+                                    </p> <!-- 'ko-KR'을 사용하여 한국식 날짜 포맷으로 출력 -->
+                                </div>
+                            <% } %>
+                            <p><a href="/edit/<%= 글목록[i]._id %>"></a>시작</p>
+                            <p class="delete" data-id="<%= 글목록[i]._id %>">삭제</p>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+            <div class="move-write">
+                <div>
+                    <div>
+                        <input class="search">
+                        <button class="search-send">검색</button>
+                    </div>
+                    
+                    <!-- 자바스크립트 -->
+                    <script>
+                        document.querySelector('.search-send').addEventListener
+                        ('click', function(){
+                            let 입력한거 = document.querySelector('.search').value
+                            location.href = '/search?val=' + 입력한거
+                        })
+                    </script>
+
+                </div>
+            </div>
+            <a href="/logout">로그아웃</a>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+</body>
+</html>

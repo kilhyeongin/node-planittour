@@ -1,0 +1,2034 @@
+/* 나눔바른고딕 */
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+ }
+ 
+ @font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+ }
+ 
+ @font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 300;
+  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+  src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+ }
+
+
+
+@font-face {
+  font-family: 'TmoneyRoundWindExtraBold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SUIT-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+  
+.bd {
+  background-color: #efefef;
+}
+
+.grey-bg {
+  background: #eee;
+}
+
+.contact-list {
+  display: flex;
+}
+
+.contact-list > div:nth-of-type(1) {
+  width: 50%;
+}
+
+
+
+
+.white-bg {
+  background: white;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+
+.white-bg .list-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding : 15px 10px;
+  border-bottom: 1px solid#eee;
+}
+
+.white-bg .list-box .list-click {
+  position: relative;
+  display: flex;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.white-bg .list-box .list-click p:nth-of-type(2) {
+  margin-left: 5px;
+}
+
+.white-bg .list-box .list-click h6 {
+  font-size: 16px;
+  font-weight: normal;
+  margin: auto;
+}
+
+.white-bg .list-box .delete-agree p {
+  font-size: 13px;
+  margin: 5px;
+  color: grey;
+}
+
+.white-bg .list-box a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.list-all {
+  display: flex;
+}
+
+.list-all > div:nth-of-type(1) {
+  width: 50%;
+}
+
+.list-all .list-form {
+  position: relative;
+  border-radius: 5px;
+  background-color: white;
+  margin: 20px;
+  padding: 2rem;
+  width: 500px;
+  height: 400px;
+}
+
+.list-all .list-form .myform {
+  width: 90%;
+  margin: auto;
+}
+
+.list-all .list-form .myform .name {
+  flex-direction: column;
+}
+
+
+.list-all .list-form .myform .name label {
+  margin-top: 50px;
+}
+
+
+
+
+.contact-bg .list-box .important-features p {
+  border: 1px solid black;
+  position: relative;
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.contact-bg .list-box .subject {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-bg .list-box .subject .contact-client-name {
+  display: flex;
+}
+
+.contact-bg .list-box .subject .contact-client-name h4 {
+  font-size: 16px;
+  margin: 15px 0;
+}
+
+.contact-bg .list-box .subject .contact-client-name h4:nth-of-type(2) {
+  margin-left: 15px;
+}
+
+.contact-bg .list-box .subject .content-consultation {
+
+}
+
+.contact-bg .list-box .subject .content-consultation h4 {
+  margin: 10px 0;
+  color: rgba(100,100,100);
+  font-size: 14px;
+}
+
+
+
+input,
+div {
+  box-sizing: border-box;
+}
+
+.form-box {
+  background : white;
+  padding : 25px;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+.form-box input {
+  padding : 10px;
+  font-size: 16px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.form-box button {
+  padding: 10px;
+  border : none;
+  background : lightgrey;
+  border-radius: 5px;
+}
+
+
+.whole {
+  position: relative;
+  max-width: 1400px;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+}
+
+
+.whole * {
+  font-family: 'SUIT-Regular'
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+
+.whole .logo {
+  width: 100%;
+}
+
+.whole .logo img {
+  width: 100%;
+}
+
+.whole .hd h1 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 30px;
+}
+
+.whole > h1 strong {
+  font-size: 16px;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0 4rem 0;
+}
+
+.edit-name {
+  display: none;
+}
+
+.name label {
+  margin-right: 30px;
+  font-size: 18px;
+}
+
+.name input {
+  border: transparent;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  margin-left: 5px;
+  width: 100px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.myform {
+  height: 100%;
+}
+
+.edit-myform {
+  display: none;
+}
+
+.form-whole {
+  position: relative;
+  height: 100%;
+}
+
+.write-form-whole {
+  height: 30%;
+}
+
+.form-whole h2 {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.form-whole > div {
+  width: 100%;
+  height: 100%;
+}
+
+.experience-all {
+  position: relative;
+  flex-direction: column;
+  padding: 3rem 1rem 0 1rem;
+}
+
+.travel-experience {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.travel-experience > div {
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+  width: 45%;
+  height: 200px;
+}
+
+.travel-experience .groom {
+  margin-right: 10px;
+}
+
+.travel-experience > div > div > div input {
+  display: none;
+}
+
+.travel-experience > div > div {
+  width: 100%;
+  margin-top: 20px;
+}
+.travel-experience > div > div > label {
+  display: block;
+  margin-top: 20px;
+}
+
+.travel-experience > div > div > div {
+  display: flex;
+}
+
+.travel-experience > div > div > div label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 1rem 0;
+  background-color: white;
+  box-shadow: 2px 2px 14px rgba(0,0,0,0.1);
+  border-radius: 10px !important;
+}
+
+.travel-experience > div > div > div label:nth-of-type(1) {
+  margin-right: 10px;
+}
+
+.travel-experience-detail > div label,
+.travel-experience > div label:nth-of-type(3) {
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
+.travel-experience p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.travel-experience > div #groom-number,
+.travel-experience > div #bride-number {
+  width: 40px;
+  text-align: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: inner-spin-button;
+  opacity: 1;
+}
+
+.groom-number,
+.bride-number {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.groom-number .groom-number-div,
+.bride-number .bride-number-div {
+  position: relative;
+  display: flex;
+  margin-left: 10px;
+  width: 120px;
+  
+}
+
+.groom-number .groom-number-div > div,
+.bride-number .bride-number-div > div {
+  border: 1px solid rgba(0,0,0,0.1);
+  width: 50%;
+  background-color: white;
+  padding-bottom: 5px;
+  cursor: pointer;
+  background-color: #eee;
+}
+
+
+.groom-number .groom-number-div > div:nth-of-type(1),
+.bride-number .bride-number-div > div:nth-of-type(1) {
+  padding-left: 13px;
+  border-radius: 20px 0 0 20px;
+}
+.groom-number .groom-number-div > div:nth-of-type(2),
+.bride-number .bride-number-div > div:nth-of-type(2) {
+  text-align: right;
+  padding-right: 13px;
+  border-radius: 0 20px 20px 0;
+}
+
+.groom-number input,
+.bride-number input {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 40px !important;
+  height: 100%;
+  border-radius: 50%;
+  /* border: 1px solid rgba(0,0,0,0.5); */
+  border: transparent;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
+}
+
+#groom-number-label,
+#bride-number-label {
+  display: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.travel-experience .groom-yes.on,
+.travel-experience .groom-no.on,
+.travel-experience .bride-yes.on,
+.travel-experience .bride-no.on {
+  background-color: #646e97;
+  color: white;
+}
+
+.travel-type {
+  display: flex;
+  padding: 70px 0;
+}
+
+.travel-type h2 {
+  font-size: 20px;
+}
+
+.travel-type > div {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 65px;
+  line-height: 22px;
+}
+
+.travel-type > div label {
+  margin-right: 10px;
+  padding: 1rem;
+}
+
+.travel-type > div label input {
+  display: none;
+}
+
+.travel-type > div p {
+  margin-right: 30px;
+  font-weight: bold;
+}
+
+.groom-column > label,
+.bride-column > label {
+  background-color: white;
+  box-shadow: 2px 2px 14px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.groom-column > label.on,
+.bride-column > label.on {
+  background-color: #646e97;
+  color: white;
+}
+
+.next-concept {
+  border-radius: 10px;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 100px;
+  height: 50px;
+  background-color: #2d3555;
+}
+
+.next-concept > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #d6d6d6;
+  font-weight: bold;
+}
+
+
+/* 2. 선호하는 여행 콘셉트는? */
+.travel-concept {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  padding: 1rem 1rem 0 1rem;
+}
+
+
+.travel-concept > label {
+  border-radius: 10px;
+  box-shadow: 2px 2px 14px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: baseline;
+  margin-top: 15px;
+  line-height: 20px;
+  padding: 1.5rem 1rem;
+  background-color: white;
+}
+
+
+.travel-concept > label:nth-of-type(1) {
+  margin-top: 30px;
+}
+
+
+.travel-concept > label.on {
+  background-color: #646e97;
+  color: white;
+}
+
+
+.travel-concept > label input {
+  display: none;
+  margin-right: 5px;
+}
+
+
+.travel-concept-check {
+  display: flex;
+}
+
+
+.travel-concept-check input {
+  margin-right: 10px;
+}
+
+
+.next-country {
+  border-radius: 10px;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 100px;
+  height: 50px;
+  background-color: #2d3555;
+}
+
+
+.next-country > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #d6d6d6;
+  font-weight: bold;
+}
+
+.prev-experience {
+  border-radius: 10px;
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  width: 100px;
+  height: 50px;
+  background-color: #8e8e8f;
+}
+
+.prev-experience > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #d6d6d6;
+  font-weight: bold;
+}
+
+
+/* 3. 내가 원하는 비행거리와 지역은? */
+.want-country {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  padding: 3rem 1rem 0 1rem;
+}
+
+.want-country > label {
+  display: flex;
+  align-items: baseline;
+  margin-top: 15px;
+  line-height: 20px;
+  box-shadow: 2px 2px 14px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  background-color: white;
+}
+
+.want-country > label.on {
+  background-color: #646e97;
+  color: white;
+}
+
+
+.want-country > label:nth-of-type(1) {
+  margin-top: 50px;
+}
+
+
+.want-country > label input {
+  display: none;
+  margin-right: 5px;
+}
+
+
+.want-country-check {
+  display: flex;
+}
+
+
+.want-country-check input {
+  margin-right: 10px;
+}
+
+.next-lodging {
+  border-radius: 10px;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 100px;
+  height: 50px;
+  background-color: #2d3555;
+}
+
+.next-lodging > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #d6d6d6;
+  font-weight: bold;
+}
+
+.prev-concept {
+  border-radius: 10px;
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  width: 100px;
+  height: 50px;
+  background-color: #8e8e8f;
+}
+
+.prev-concept > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #d6d6d6;
+  font-weight: bold;
+}
+
+
+
+/* 4. 내가 원하는 숙소 타입은? */
+.lodging-type {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  padding: 3rem 1rem 0 1rem;
+}
+
+.lodging-type > label {
+  display: flex;
+  align-items: baseline;
+  margin-top: 15px;
+  line-height: 20px;
+  box-shadow: 2px 2px 14px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  background-color: white;
+}
+
+.lodging-type > label.on {
+  background-color: #646e97;
+  color: white;
+}
+
+.lodging-type > label:nth-of-type(1) {
+  margin-top: 50px;
+}
+
+.lodging-type label input {
+  display: none;
+  margin-right: 5px;
+}
+
+.lodging-type-check {
+  display: flex;
+}
+
+.lodging-type-check input {
+  margin-right: 10px;
+}
+
+
+.next-expenses {
+  border-radius: 10px;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 100px;
+  height: 50px;
+  background-color: #2d3555;
+}
+
+.next-expenses > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #d6d6d6;
+  font-weight: bold;
+}
+
+.prev-country {
+  border-radius: 10px;
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  width: 100px;
+  height: 50px;
+  background-color: #8e8e8f;
+}
+
+.prev-country > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #d6d6d6;
+  font-weight: bold;
+}
+
+
+/* 5. 내가 원하는 1인 여행경비는?(항공료 제외) */
+.travel-expenses {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  padding: 3rem 1rem 0 1rem;
+}
+
+.travel-expenses label {
+  display: flex;
+  align-items: baseline;
+  margin-top: 15px;
+  line-height: 20px;
+  box-shadow: 2px 2px 14px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  background-color: white;
+}
+
+.travel-expenses label:nth-of-type(1) {
+  margin-top: 50px;
+}
+
+.travel-expenses > label.on {
+  background-color: #646e97;
+  color: white;
+}
+
+.travel-expenses label input {
+  display: none;
+  margin-right: 5px;
+}
+
+.travel-expenses-check {
+  display: flex;
+}
+
+.travel-expenses-check input {
+  margin-right: 10px;
+}
+
+.next-period {
+  border-radius: 10px;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 100px;
+  height: 50px;
+  background-color: #2d3555;
+}
+
+.next-period > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #d6d6d6;
+  font-weight: bold;
+}
+
+.prev-type {
+  border-radius: 10px;
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  width: 100px;
+  height: 50px;
+  background-color: #8e8e8f;
+}
+
+.prev-type > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #d6d6d6;
+  font-weight: bold;
+}
+
+
+
+
+/* 6. 내가 원하는 여행기간은? */
+.travel-period {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  padding: 3rem 1rem 0 1rem;
+}
+
+.travel-period > label {
+  display: flex;
+  align-items: baseline;
+  margin-top: 15px;
+  line-height: 20px;
+  box-shadow: 2px 2px 14px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  background-color: white;
+}
+
+.travel-period > label.on {
+  background-color: #646e97;
+  color: white;
+}
+
+.travel-period > label:nth-of-type(1) {
+  margin-top: 50px;
+}
+
+.travel-period > label input {
+  display: none;
+  margin-right: 5px;
+}
+
+.travel-period-check input {
+  margin-right: 10px;
+}
+
+.next-request {
+  border-radius: 10px;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 100px;
+  height: 50px;
+  background-color: #2d3555;
+}
+
+.next-request > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #d6d6d6;
+  font-weight: bold;
+}
+
+.prev-expenses {
+  border-radius: 10px;
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  width: 100px;
+  height: 50px;
+  background-color: #8e8e8f;
+}
+
+.prev-expenses > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #d6d6d6;
+  font-weight: bold;
+}
+
+
+/* 7. 추가로 요청할 사항이 있으시다면 적어주세요. */
+.additional-request {
+  position: relative;
+  display: none;
+  padding: 3rem 1rem 0 1rem;
+  flex-direction: column;
+}
+
+.additional-request textarea {
+  margin-top: 50px;
+  width: 100%;
+  height: 400px;
+  resize: none;
+  font-size: 18px;
+  border: transparent;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.additional-request .prev-request {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #8e8e8f;
+}
+
+.additional-request .prev-request span {
+  color: #d6d6d6;
+}
+
+
+/* 버튼 */
+.form-btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto !important;
+  height: auto !important;
+}
+
+.form-btn button {
+  width: 240px;
+  height: 60px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  background-color: #1a3258;
+}
+
+
+.move-write {
+  position: relative;
+  display: flex;
+  margin: 0 20px;
+}
+
+.move-write > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.move-write > div a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.move-write > div .pagination {
+  display: flex;
+}
+
+.move-write > div .pagination > div {
+  margin-right: 5px;
+}
+
+.move-write > div > div {
+  position: relative;
+}
+
+.move-write > div .search-btn {
+  display: flex;
+  align-items: center;
+}
+
+.move-write p {
+  position: relative;
+  padding: .8rem;
+  background-color: white;
+  font-family: 'SUIT-Regular';
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.move-write p a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.delete-agree {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.delete-agree > p {
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  padding: .5rem 1rem;
+  cursor: pointer;
+}
+
+
+.delete-agree > p:hover {
+  background-color: #eee;
+}
+
+
+.delete-agree > div {
+  margin-right: 5px;
+}
+
+
+.delete-agree > div p {
+  font-size: 12px;
+}
+
+
+#travel-type-section {
+  display: none;
+  flex-direction: column;
+}
+
+
+/* display:none 처리 */
+.hd {
+  display: none;
+}
+
+.form-btn {
+  display: none;
+}
+
+
+/* ******************************************수정 페이지 스타일**************************************** */
+
+.client-img {
+  position: relative !important;
+  max-width: 1400px;
+  width: 100%;
+  z-index: 10;
+}
+
+.client-img > div img {
+  width: 100%;
+}
+
+.client-img > div .client_img_pc {
+  display: block;
+}
+
+.client-img > div .client_img_m {
+  display: none;
+}
+
+.client-name {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+
+.client-name p {
+  display: block;
+  color: #152D56;
+  font-family: 'TmoneyRoundWindExtraBold';
+}
+
+.client-name p:nth-of-type(1) {
+  font-size: 75px;
+}
+
+.client-name p:nth-of-type(2) {
+  font-size: 50px;
+  margin-left: 30px;
+}
+
+.client-name > div {
+  display: flex;
+  align-items: end;
+}
+
+
+.client-name > div:nth-of-type(2) {
+  margin-top: 60px;
+}
+
+.next-form {
+  /* border: 1px solid #1a3258; */
+  border: 1px solid rgba(0,0,0,0.1);
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 50px;
+  cursor: pointer;
+  /* background-color: #1a3258; */
+  color: #1a3258;
+  border-radius: 30px;
+  font-family: 'SUIT-Regular';
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.next-experience {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+
+.experience-all,
+.travel-concept,
+.want-country,
+.lodging-type,
+.travel-expenses,
+.travel-period,
+.additional-request {
+  display: none;
+}
+
+.write-form-btn {
+  display: block;
+}
+
+
+/* ******************************************디테일 페이지 스타일**************************************** */
+
+.detail-whole {
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  padding: 4rem 2rem;
+}
+
+.detail-whole * {
+  font-family: 'SUIT-Regular';
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.detail-whole .detail-logo {
+  width: 100%;
+}
+
+.detail-whole .detail-logo img {
+  width: 100%;
+}
+
+.detail-whole .detail-hd h1 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 30px;
+}
+
+.detail-whole > h1 strong {
+  font-size: 16px;
+}
+
+.detail-form-whole h2 {
+  font-size: 18px;
+  margin-top: 50px;
+}
+
+.detail-travel-experience > div {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.detail-travel-experience > div:nth-of-type(1) {
+  margin-top: 20px;
+}
+
+.detail-travel-experience > div #groom-choice,
+.detail-travel-experience > div #bride-choice {
+  margin-bottom: 2px;
+}
+
+.detail-travel-experience > div p {
+  margin-right: 10px;
+}
+
+.detail-travel-experience > div label {
+  margin-left: 10px;
+}
+
+.detail-travel-experience > div #groom-number,
+.detail-travel-experience > div #bride-number {
+  text-align: center;
+  width: 10%;
+}
+
+.detail-travel-type > div {
+  display: flex;
+  margin-top: 10px;
+}
+
+.detail-travel-type > div:nth-of-type(1) {
+  margin-top: 20px;
+}
+
+.detail-travel-type > div p {
+  margin-right: 10px;
+}
+
+.detail-travel-concept > div {
+  display: flex;
+  margin-top: 10px;
+}
+
+.detail-travel-concept > div:nth-of-type(1) {
+  margin-top: 20px;
+}
+
+.detail-travel-concept > div input {
+  margin-right: 10px;
+}
+
+.detail-want-country > div {
+  display: flex;
+  margin-top: 20px;
+}
+
+.detail-want-country > div input {
+  margin-right: 10px;
+}
+
+
+.detail-lodging-type > div {
+  display: flex;
+  margin-top: 20px;
+}
+
+.detail-lodging-type > div input {
+  margin-right: 10px;
+}
+
+
+.detail-travel-expenses > div {
+  display: flex;
+  margin-top: 20px;
+}
+
+.detail-travel-expenses > div input {
+  margin-right: 10px;
+}
+
+
+.detail-travel-period > div {
+  display: flex;
+  margin-top: 20px;
+}
+
+.detail-travel-period > div input {
+  margin-right: 10px;
+}
+
+
+.detail-additional-request textarea {
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+
+
+@media (max-width:1400px) {
+  .client-name p {
+    font-size: 5.5vw;
+  }
+
+
+}
+
+@media (max-width:1300px) {
+  .whole {
+    max-width: 1300px;
+  }
+
+
+  .client-img {
+    position: relative;
+    max-width: 1300px;
+    height: 100%;
+    overflow: hidden;
+  }
+
+
+  .client-img div img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 110%;
+  }
+
+
+}
+
+
+
+
+@media (max-width:1200px) {
+
+  .list-all > div:nth-of-type(1) {
+    width: auto;
+  }
+
+  .list-all {
+    flex-direction: column;
+   
+  }
+
+  .list-all .list-form {
+    width: auto;
+    height: 300px;
+    margin-top: 80px;
+  }
+
+  .list-all .list-form .myform .name {
+    flex-direction: inherit;
+  }
+
+  .list-all .list-form .myform {
+    position: relative;
+    display: flex;
+    align-items:baseline;
+    justify-content: center;
+  }
+
+  .list-all .list-form .myform .form-btn {
+    bottom: 2%;
+
+  }
+
+
+
+
+
+}
+
+
+
+
+@media (max-width:1100px) {
+
+  .client-name p:nth-of-type(2) {
+    margin-top: 40px;
+  }
+
+
+
+}
+
+
+@media (max-width: 800px) {
+
+
+
+  .client-img > div .client_img_pc {
+    display: none;
+  }
+
+  .client-img > div .client_img_m {
+    display: block;
+    width: 100%;
+  }
+
+  .client-name {
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+
+
+}
+
+
+
+@media (max-width:625px) {
+
+  .list-all .list-form {
+    height: 400px;
+  }
+  
+  .list-all .list-form .myform .name {
+    flex-direction: column;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.all-control {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 99999999 !important;
+}
+
+.all-control.on {
+  display: block;
+}
+
+.loading {
+	width: 20px; height: 100px;
+	position: absolute;
+	left: 0; top: 0; right: 0; bottom: 0;
+	margin: auto;
+	animation: loding 1s ease 100;
+}
+
+.loading .circle1 { 
+	display: block;
+	width: 20px; height: 20px; 
+	background:#2d3555;
+	border-radius: 50%;
+}
+
+.loading .circle2 { 
+	display: block; margin-top: 60px;
+	width: 20px; height: 20px; 
+	background:#2d3555;
+	border-radius: 50%;
+}
+
+@keyframes loding {
+	0% {transform: rotate(0deg); }
+	100% {transform: rotate(360deg); }
+}
+
+
+
+
+
+/* 상담전화 예약페이지 수정 제작 */
+
+.contact-hd {
+  width: 100%;
+  padding: 1.5rem 1.2rem;
+}
+
+.contact-hd > div {
+  display: flex;
+  align-items: center;
+}
+
+.contact-hd > div > div {
+  padding: 0 0.8rem;
+}
+
+.contact-hd > div > div img {
+  width: 140px;
+}
+
+.contact-hd > div p {
+  position: relative;
+  color: #838690;
+  font-size: 24px;
+  font-weight: normal;
+  letter-spacing: -1;
+  padding: 0 0.8rem;
+}
+
+.contact-hd > div p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 1px solid #2d3555;
+  height: 90%;
+}
+
+.contact-edit-main {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+}
+.contact-edit-main * {
+  font-family: 'NanumBarunGothic', sans-serif;
+}
+
+.contact-edit-main .edit-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #2d3555;
+  padding: 3rem 0 1rem 0;
+}
+
+.contact-edit-main .edit-top > div {
+  width: 50px;
+}
+
+.contact-edit-main .edit-top > div img {
+  width: 100%;
+}
+
+.contact-edit-main .edit-top h1 {
+  font-size: 26px;
+  margin-top: 10px;
+  letter-spacing: -2px;
+}
+
+.contact-edit-main .edit-top h1 strong {
+  font-weight: bold;
+}
+
+.contact-edit-main .edit-top h1:nth-of-type(2) {
+  margin-top: 8px;
+}
+
+.contact-edit-main .counseling-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.contact-edit-main .counseling-form select {
+  position: relative;
+  width: 85%;
+  height: 60px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.contact-edit-main .counseling-form select option[value=""] {
+  color: #838690;
+}
+
+
+/* select 새로 만들기 */
+.contact-edit-main .counseling-form .select-box {
+  border: 2px solid #2d3555;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 86%;
+  height: 60px;
+  border-radius: 10px;
+  background-color: white;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.contact-edit-main .counseling-form .select-box a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+.contact-edit-main .counseling-form .select-box > input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  border: transparent;
+  color: #2d3555;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.contact-edit-main .counseling-form .select-box > input::placeholder {
+  color: #838690;
+}
+
+
+
+.contact-edit-main .counseling-form .select-box > input[disabled] {
+  background-color: white;
+}
+
+.contact-edit-main .counseling-form .select-box > span {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  height: 24px;
+  transform: translateY(-50%);
+  color: #838690;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.contact-edit-main .counseling-form .select-box.on > span {
+  transform: rotate(-180deg) translateY(50%);
+}
+
+.contact-edit-main .counseling-form .select-box .option-box {
+  border: 2px solid #2d3555;
+  display: none;
+  position: absolute;
+  top: 78px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.contact-edit-main .counseling-form .select-box.on .option-box {
+  display: block;
+}
+
+.contact-edit-main .counseling-form .select-box .option-box .option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: white;
+}
+
+.contact-edit-main .counseling-form .select-box .option-box .option p {
+  margin-left: 10px;
+  color: #2d3555;
+  font-size: 16px;
+}
+
+.contact-edit-main .counseling-form .select-box .option-box .option:hover {
+  background-color: #2f73fc;
+}
+
+.contact-edit-main .counseling-form .select-box .option-box .option:hover p {
+  color: #ffffff;
+}
+
+
+.contact-edit-main .counseling-form select option {
+  width: 85%;
+}
+
+
+.contact-edit-main .counseling-form .choice-btn {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+  margin-top: 20px;
+}
+
+
+.contact-edit-main .counseling-form .choice-btn > div {
+  border: 2px solid #dddee0;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 2 - 10px);
+  height: 60px;
+}
+
+.contact-edit-main .counseling-form .choice-btn > div > input {
+  display: none;
+}
+
+
+.contact-edit-main .counseling-form .choice-btn > div p {
+  color: #838690;
+  margin-left: 5px;
+}
+
+
+.contact-edit-main .counseling-form .choice-btn > div.on {
+  border: 2px solid #2d3555;
+}
+
+
+.contact-edit-main .counseling-form .choice-btn > div.on p {
+  color: #2d3555;
+}
+
+
+.contact-edit-main .counseling-form .choice-btn > div .checkBox {
+  position: relative;
+  border: 1px solid black;
+  width: 12px;
+  height: 12px;
+}
+
+
+.contact-edit-main .counseling-form .choice-btn > div .checkBox span {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+.contact-edit-main .counseling-form .choice-btn > div.on .checkBox span {
+  display: block;
+}
+
+
+
+
+.contact-edit-main .counseling-form .send-btn {
+  border: transparent;
+  border-radius: 10px;
+  position: absolute;
+  top: 80%;
+  width: 86%;
+  height: 60px;
+  background-color: #2f73fc;
+}
+
+.contact-edit-main .counseling-form .send-btn p {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+
+.contact-write-main {
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 2rem 1rem;
+  margin-left: 20px;
+}
+
+
+.contact-write-main .counseling-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.contact-write-main .counseling-form > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 40px;
+  background-color: #2f73fc;
+  border: transparent;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.contact-write-main .counseling-form > button p {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+
+
+/* contact-write 손님 성함 적는곳 */
+
+.client-name-write {
+  width: 100%;
+}
+
+.client-name-write > div {
+  display: flex;
+  align-items: center;
+  padding: .1rem 0;
+}
+
+.client-name-write > div p {}
+
+.client-name-write > div input {
+  margin-left: 10px;
+  height: 30px;
+}
+
+
+
+
+/* thankyou페이지 */
+
+.thankyou {
+  border-left: 1px solid rgba(0,0,0,0.2);
+  border-right: 1px solid rgba(0,0,0,0.2);
+  max-width: 500px;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+}
+
+.thankyou .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.thankyou .main .check-icon {
+  width: 60px;
+}
+
+.thankyou .main .check-icon img {
+  width: 100%;
+}
+
+.thankyou .main .completed-message {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 85%;
+  height: 230px;
+  margin-top: 30px;
+  color: #2d3555;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.thankyou .main .completed-message p {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.thankyou .main .completed-message h6 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+
+@media (max-width:800px) {
+
+  .contact-list {
+    flex-direction: column;
+  }
+  .contact-list > div:nth-of-type(1) {
+    width: auto;
+  }
+
+
+}
+
+
+
+
+@media (max-width:500px) {
+
+  .contact-edit-main {
+    border: transparent;
+  }
+
+}
+
+
+
+
+
+@media (max-width:430px) {
+
+  .contact-hd {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .contact-hd > div > div img {
+    width: 130px;
+  }
+
+  .contact-hd > div p {
+    font-size: 20px;
+  }
+
+  .contact-edit-main .edit-top {
+    padding: 1rem 0;
+  }
+
+  .contact-edit-main .edit-top > div {
+    width: 40px;
+  }
+
+  .contact-edit-main .edit-top h1 {
+    font-size: 22px;
+  }
+
+  .contact-edit-main .counseling-form {
+    margin-top: 15px;
+  }
+
+  .contact-edit-main .counseling-form .select-box {
+    height: 50px;
+  }
+
+  .contact-edit-main .counseling-form .select-box > input {
+    font-size: 14px;
+  }
+
+  .contact-edit-main .counseling-form .select-box .option-box {
+    top: 68px;
+  }
+
+  .contact-edit-main .counseling-form .select-box .option-box .option p {
+    font-size: 14px;
+  }
+
+
+  .contact-edit-main .counseling-form .choice-btn > div {
+    height: 50px;
+  }
+
+  .contact-edit-main .counseling-form .choice-btn > div p {
+    font-size: 14px;
+  }
+
+
+  .contact-bg .list-box .important-features p {
+    padding: 3px 12px;
+  }
+
+
+  .contact-bg .list-box .subject .contact-client-name h4 {
+    font-size: 14px;
+  }
+
+  .contact-bg .list-box .subject .content-consultation h4 {
+    font-size: 12px;
+  }
+
+
+  .thankyou .main .completed-message {
+    height: 200px;
+  }
+
+  .thankyou .main .completed-message p {
+    font-size: 22px;
+  }
+
+  .thankyou .main .completed-message h6 {
+    font-size: 28px;
+    margin-top: 25px;
+  }
+
+
+
+
+
+
+}
+
+
+
+

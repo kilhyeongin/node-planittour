@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta property="og:image" content="/img/metalogo.png"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플래닛투어</title>
+  <!-- chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #f0f0f0;
+    }
+
+
+    h1 {
+      margin-bottom: 20px;
+      margin-top: 50px;
+    }
+
+
+    canvas {
+      background-color: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+    .chart-container {
+      max-width: 1000px;
+      width: 100%; /* 너비 조정 */
+      height: auto; /* 높이 조정 */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>1. 선호하는 여행 콘셉트는?</h1>
+  <div class="chart-container">
+    <canvas id="conceptChart"></canvas>
+  </div>
+  <h1>2. 내가 원하는 비행거리와 지역은?</h1>
+  <div class="chart-container">
+    <canvas id="countryChart"></canvas>
+  </div>
+  <h1>3. 내가 원하는 숙소 타입은?</h1>
+  <div class="chart-container">
+    <canvas id="lodgingChart"></canvas>
+  </div>
+  <h1>4. 내가 원하는 1인 여행경비는?(항공료 제외)</h1>
+  <div class="chart-container">
+    <canvas id="expensesChart"></canvas>
+  </div>
+  <h1>5. 내가 원하는 여행기간은?</h1>
+  <div class="chart-container">
+    <canvas id="periodChart"></canvas>
+  </div>
+
+
+  <script>
+    // 서버로부터 전달받은 데이터를 JavaScript로 전달
+    const concepts = JSON.parse('<%- concepts %>');
+    const countries = JSON.parse('<%- countries %>');
+    const lodgings = JSON.parse('<%- lodgings %>');
+    const expenses = JSON.parse('<%- expenses %>');
+    const periods = JSON.parse('<%- periods %>');
+
+    console.log(concepts, countries, lodgings, expenses, periods);
+
+    // 데이터 변환: 데이터 객체의 키와 값을 각각 라벨과 데이터 배열로 분리
+    const labelsConcepts = Object.keys(concepts);
+    const dataConcepts = Object.values(concepts);
+
+    const labelsCountries = Object.keys(countries);
+    const dataCountries = Object.values(countries);
+
+    const labelsLodgings = Object.keys(lodgings);
+    const dataLodgings = Object.values(lodgings);
+
+    const labelsExpenses = Object.keys(expenses);
+    const dataExpenses = Object.values(expenses);
+
+    const labelsPeriods = Object.keys(periods);
+    const dataPeriods = Object.values(periods);
+
+    // 차트 색상 배열: 차트의 배경색과 테두리 색상을 설정하기 위한 배열
+    const backgroundColors = [
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)',
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)',
+      'rgba(255, 99, 71, 0.2)',
+      'rgba(34, 139, 34, 0.2)',
+      'rgba(255, 215, 0, 0.2)',
+      'rgba(70, 130, 180, 0.2)',
+      'rgba(123, 104, 238, 0.2)',
+      'rgba(210, 105, 30, 0.2)',
+      'rgba(245, 222, 179, 0.2)',
+      'rgba(199, 21, 133, 0.2)',
+      'rgba(0, 206, 209, 0.2)',
+      'rgba(72, 209, 204, 0.2)',
+      'rgba(25, 25, 112, 0.2)',
+      'rgba(255, 140, 0, 0.2)'
+    ];
+
+    const borderColors = [
+      'rgba(255, 99, 132, 1)',
+      'rgba(54, 162, 235, 1)',
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)',
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)',
+      'rgba(255, 99, 71, 1)',
+      'rgba(34, 139, 34, 1)',
+      'rgba(255, 215, 0, 1)',
+      'rgba(70, 130, 180, 1)',
+      'rgba(123, 104, 238, 1)',
+      'rgba(210, 105, 30, 1)',
+      'rgba(245, 222, 179, 1)',
+      'rgba(199, 21, 133, 1)',
+      'rgba(0, 206, 209, 1)',
+      'rgba(72, 209, 204, 1)',
+      'rgba(25, 25, 112, 1)',
+      'rgba(255, 140, 0, 1)'
+    ];
+
+    // 차트 생성 함수: 주어진 컨텍스트, 라벨, 데이터, 라벨 이름, 차트 타입을 이용해 차트를 생성
+    function createChart(ctx, labels, data, label, chartType) {
+      // 데이터가 없으면 해당 canvas를 숨김
+      if (data.every(val => val === 0)) {
+        console.log(`${label} 차트 데이터가 비어 있으므로 렌더링하지 않음.`);
+        ctx.canvas.style.display = 'none';  // canvas 요소를 완전히 숨김
+        return;
+      }
+
+      new Chart(ctx, {
+        type: chartType,
+        data: {
+          labels: labels,
+          datasets: [{
+            label: label,
+            data: data,
+            backgroundColor: backgroundColors.slice(0, data.length),
+            borderColor: borderColors.slice(0, data.length),
+            borderWidth: 1
+          }]
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: label
+            },
+            datalabels: {
+              display: function(context) {
+                return context.dataset.data[context.dataIndex] > 0;  // 값이 0인 경우 레이블을 숨김
+              },
+              formatter: (value, context) => {
+                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                const percentage = ((value / total) * 100).toFixed(2) + '%';
+                const label = context.chart.data.labels[context.dataIndex];
+                return label + ': ' + percentage;
+              },
+              color: 'black',
+              font: {
+                weight: 'bold'
+              }
+            }
+          }
+        },
+        plugins: [ChartDataLabels]
+      });
+    }
+
+
+    console.log("Concepts Data:", labelsConcepts, dataConcepts);
+    console.log("Countries Data:", labelsCountries, dataCountries);
+    console.log("Lodgings Data:", labelsLodgings, dataLodgings);
+    console.log("Expenses Data:", labelsExpenses, dataExpenses);
+    console.log("Periods Data:", labelsPeriods, dataPeriods);
+
+    // 차트 생성 - doughnut 타입으로 변경
+    createChart(document.getElementById('conceptChart').getContext('2d'), labelsConcepts, dataConcepts, '선호하는 여행 콘셉트', 'doughnut');
+    createChart(document.getElementById('countryChart').getContext('2d'), labelsCountries, dataCountries, '비행거리와 지역', 'doughnut');
+    createChart(document.getElementById('lodgingChart').getContext('2d'), labelsLodgings, dataLodgings, '숙소 타입', 'doughnut');
+    createChart(document.getElementById('expensesChart').getContext('2d'), labelsExpenses, dataExpenses, '여행 경비', 'doughnut');
+    createChart(document.getElementById('periodChart').getContext('2d'), labelsPeriods, dataPeriods, '여행 기간', 'doughnut');
+  </script>
+
+</body>
+</html>
+
+

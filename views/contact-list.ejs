@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="og:image" content="/img/metalogo.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>플래닛투어 상담예약</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="/js/common.js" defer></script>
+
+    <!-- 구글폰트 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+</head>
+<body class="grey-bg">
+
+    <section class="contact-list">
+        <div>
+            <div class="white-bg contact-bg">
+                <% for (let i = 0; i < 상담목록.length; i++){ %>
+                    <div class="list-box">
+                        <div class="subject">
+                            <div class="contact-client-name">
+                                <h4><%= 상담목록[i].groomClient %> 신랑님</h4>
+                                <h4><%= 상담목록[i].brideClient %> 신부님</h4>
+                            </div>
+                            <div class="content-consultation">
+                                <h4>상담 가능시간 : <strong><%= 상담목록[i].counseling %></strong></h4>
+                                <h4><%= 상담목록[i].agonize %></h4>
+                            </div>
+                        </div>
+                        <div class="important-features">
+                            <p>추가<a href="/contact-edit/<%= 상담목록[i]._id %>"></a></p>
+                            <p class="contact-delete" data-id="<%= 상담목록[i]._id %>">삭제</p>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+            <div class="move-write">
+                <div>
+                    <% for (let i = 1; i <= 총전화상담페이지; i++) { %>
+                        <div>
+                            <p><%= i %></p>
+                            <a href="/contact-list/<%= i %>" class="<%= (i === 현재전화상담페이지) ? 'active' : '' %>"></a>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="contact-write-main">
+            <h2>고객 성함 작성칸</h2>
+            <form class="counseling-form" action="/contact-add" method="POST">
+                <div>
+                    <div class="client-name-write">
+                        <div>
+                            <p>신랑님 성함</p>
+                            <input type="text" name="groomClient" value="">
+                        </div>
+                        <div>
+                            <p>신부님 성함</p>
+                            <input type="text" name="brideClient" value="">
+                        </div>
+                    </div>
+                    <div class="select-box" style="display: none;">
+                        <input class="select-choice" name="counseling" value="" placeholder="시간 선택" readonly>
+                    </div>
+                    <div class="choice-btn" style="display: none;">
+                        <div class="A-type">
+                            <input name="agonize" type="radio" value="타사 계약하신 경우">
+                        </div>
+                        <div class="B-type">
+                            <input name="agonize" type="radio" value="견적 비교중이신 경우">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit"><p>등록</p></button>
+            </form>
+        </div>
+    </section>
+
+  
+
+    <script>
+        for (let i = 0; i < '<%= 상담목록.length %>'; i++)
+        document.querySelectorAll('.contact-delete')[i]
+        .addEventListener('click', function(e){
+            e.target.dataset.id
+            fetch('/contact-delete?docid=' + e.target.dataset.id, {
+                method : 'DELETE',
+            })
+            .then((r)=>r.text())
+            .then((r)=>{
+                e.target.parentElement.parentElement.style.display = 
+                'none'
+            })
+        })
+    </script>
+
+</body>
+</html>
