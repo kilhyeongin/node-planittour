@@ -68,7 +68,7 @@ function redirectIfAuthenticated(req, res, next) {
 // });
 
 app.get('/', (req, res) => {
-  res.redirect('https://planittour.kr');  // 원하는 주소로 리다이렉트
+  res.redirect('/');  // 원하는 주소로 리다이렉트
 });
 
 
