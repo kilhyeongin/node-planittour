@@ -63,13 +63,13 @@ function redirectIfAuthenticated(req, res, next) {
   next();
 }
 
-// app.get('/', (req, res) => {
-//   res.sendFile(__dirname + '/index.html');
-// });
-
 app.get('/', (req, res) => {
-  res.redirect('/');  // 원하는 주소로 리다이렉트
+  res.sendFile(__dirname + '/index.html');
 });
+
+// app.get('/', (req, res) => {
+//   res.redirect('https://planittour.kr');  // 원하는 주소로 리다이렉트
+// });
 
 
 // 상담설문지 로그인 확인 미들웨어
