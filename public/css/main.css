@@ -1911,6 +1911,28 @@ input[type=number] {
 }
 
 
+
+.search-page {
+  padding: 0 15px;
+}
+
+.search-page > h4 {
+  font-size: 30px;
+}
+
+.search-page > div {
+  position: relative;
+  width: 130px;
+}
+
+.search-page > div a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width:800px) {
 
   .contact-list {
