@@ -18,7 +18,7 @@ app.use(session({
   secret: '암호화에 쓸 비번',
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 12 * 60 * 60 * 1000 },
+  cookie: { }, // maxAge 옵션을 제거하여 브라우저가 닫힐 때까지 세션 유지
   store: MongoStore.create({
     mongoUrl: process.env.DB_URL,
     dbName: 'forum'
@@ -36,7 +36,7 @@ connectDB.then((client) => {
   db = client.db('forum');
 
   app.listen(8080, () => {
-    console.log('http://localhost:8080 에서 서버 실행중');
+    console.log('http://localhost:8080/list 에서 서버 실행중');
   });
 }).catch((err) => {
   console.log(err);
@@ -63,13 +63,13 @@ function redirectIfAuthenticated(req, res, next) {
   next();
 }
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
-
 // app.get('/', (req, res) => {
-//   res.redirect('https://planittour.kr');  // 원하는 주소로 리다이렉트
+//   res.sendFile(__dirname + '/index.html');
 // });
+
+app.get('/', (req, res) => {
+  res.redirect('https://planittour.kr');  // 원하는 주소로 리다이렉트
+});
 
 
 // 상담설문지 로그인 확인 미들웨어

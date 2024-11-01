@@ -23,8 +23,12 @@
                     <div class="list-box">
                         <div class="subject">
                             <div class="contact-client-name">
-                                <h4><%= 상담목록[i].groomClient %> 신랑님</h4>
-                                <h4><%= 상담목록[i].brideClient %> 신부님</h4>
+                                <% if (상담목록[i].groomClient) { %>
+                                    <h4><%= 상담목록[i].groomClient %> 신랑님</h4>
+                                <% } %>
+                                <% if (상담목록[i].brideClient) { %>
+                                    <h4><%= 상담목록[i].brideClient %> 신부님</h4>
+                                <% } %>
                             </div>
                             <div class="content-consultation">
                                 <h4>상담 가능시간 : <strong><%= 상담목록[i].counseling %></strong></h4>
