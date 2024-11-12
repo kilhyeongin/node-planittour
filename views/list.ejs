@@ -41,12 +41,33 @@
             <div class="move-write">
                 <div>
                     <div class="pagination">
-                        <% for (let i = 1; i <= 총페이지; i++) { %>
-                            <div>
-                                <p><%= i %></p>
-                                <a href="/list/<%= i %>" class="<%= (i === 현재페이지) ? 'active' : '' %>"></a>
-                            </div>
-                        <% } %>
+            
+                        <!-- 이전 페이지로 이동하는 버튼 -->
+                        <div>
+                            <% if (현재페이지 > 1) { %>
+                                <a href="/list/<%= 현재페이지 - 1 %>"><p>이전</p></a>
+                            <% } %>
+                        </div>
+            
+                        <div>
+                            <!-- 페이지네이션 범위 설정 -->
+                            <%
+                                const 범위 = 2; // 현재 페이지 기준 앞뒤 2개의 페이지만 보여줌
+                                const 시작페이지 = Math.max(1, 현재페이지 - 범위);
+                                const 끝페이지 = Math.min(총페이지, 현재페이지 + 범위);
+                            %>
+                            <% for (let i = 시작페이지; i <= 끝페이지; i++) { %>
+                                <a href="/list/<%= i %>" class="<%= (i === 현재페이지) ? 'active' : '' %>"><p><%= i %></p></a>
+                            <% } %>
+                        </div>
+            
+                        <div>
+                            <!-- 다음 페이지로 이동하는 버튼 -->
+                            <% if (현재페이지 < 총페이지) { %>
+                                <a href="/list/<%= 현재페이지 + 1 %>"><p>다음</p></a>
+                            <% } %>
+                        </div>
+            
                     </div>
                     <div class="search-btn">
                         <input class="search">
@@ -235,9 +256,51 @@
 
 
 
-
-
     <script>
+        // 검색 버튼 클릭 이벤트
+        document.querySelector('.search-send').addEventListener('click', function() {
+            let 입력한거 = document.querySelector('.search').value;
+            location.href = '/search?val=' + 입력한거;
+        });
+    
+        // Enter 키 입력 이벤트
+        document.querySelector('.search').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                document.querySelector('.search-send').click(); // 검색 버튼 클릭 이벤트 트리거
+            }
+        });
+    
+        // 신랑/신부 성함 입력 확인
+        document.getElementById("submitBtn").addEventListener("click", function(event) {
+            var groomName = document.getElementById("groomname").value.trim();
+            var brideName = document.getElementById("bridename").value.trim();
+            
+            // groomName과 brideName 둘 다 비어있을 때만 경고창을 띄움
+            if (groomName === "" && brideName === "") {
+                alert("신랑님 성함이나 신부님 성함 중 하나를 입력해 주세요.");
+                event.preventDefault(); // 폼 제출을 막음
+            }
+        });
+    
+        // 삭제 버튼 클릭 이벤트
+        for (let i = 0; i < '<%= 글목록.length %>'; i++){
+            document.querySelectorAll('.delete')[i]
+            .addEventListener('click', function(e){
+                fetch('/delete?docid=' + e.target.dataset.id, {
+                    method : 'DELETE'
+                })
+                .then((r)=>r.text())
+                .then((r)=>{ 
+                    e.target.parentElement.parentElement.style.display = 'none'
+                })
+            })
+        }
+    </script>
+
+
+
+
+    <!-- <script>
         for (let i = 0; i < '<%= 글목록.length %>'; i++){
             document.querySelectorAll('.delete')[i]
             .addEventListener('click', function(e){
@@ -251,9 +314,9 @@
                  })
             })
         }
+    </script> -->
 
-
-    </script>
+    
     
 
 </body>

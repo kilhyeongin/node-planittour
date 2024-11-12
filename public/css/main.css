@@ -1002,7 +1002,7 @@ input[type=number] {
 }
 
 .move-write > div a {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
@@ -1014,7 +1014,23 @@ input[type=number] {
 }
 
 .move-write > div .pagination > div {
+  position: relative;
+  display: flex;
   margin-right: 5px;
+}
+
+.move-write > div .pagination > div a {
+  text-decoration-line: none;
+  margin-right: 5px;
+  color: black;
+}
+
+.move-write > div .pagination > div a.active {
+  color: white;
+}
+
+.move-write > div .pagination > div a.active p {
+  background-color: rgba(0,0,0,0.2);
 }
 
 .move-write > div > div {
@@ -1036,7 +1052,7 @@ input[type=number] {
 }
 
 .move-write p a {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
